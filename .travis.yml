@@ -5,6 +5,7 @@ services:
 
 before_install:
   - docker build -t omran/docker-react -f Dockerfile.dev .
+  - docker run omran/docker-react npm run test -- --coverage
 
 scripts:
-  - docker run omran/docker-react npm run test -- --coverage
+  - npm run test -- --coverage
